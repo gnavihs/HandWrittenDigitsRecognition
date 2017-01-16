@@ -34,7 +34,7 @@ pause;
 %%    Initializing Pameters
 %Initialize them randomly so that we break the symmetry while
 %training the neural network.
-
+fprintf('Initializing Parameters...\n');
 initial_Theta1 = randInitializeWeights(input_layer_size, hidden_layer_size);
 initial_Theta2 = randInitializeWeights(hidden_layer_size, num_labels);
 
@@ -84,6 +84,7 @@ fprintf('\nProgram paused. Press enter to continue.\n');
 pause;
 
 %%  Implement Predict and compute training accuracy
+fprintf('Testing Accuracy ...\n');
 pred = predict(Theta1, Theta2, X);
 
 fprintf('\nTraining Set Accuracy: %f\n', mean(double(pred == y)) * 100);
